@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>729259766533-3b2sqftv6j47f4le3j46ivco3eoa8f55.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.729259766533-3b2sqftv6j47f4le3j46ivco3eoa8f55</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCd3VdJKKJiwcAu635tYWiSEuOKOSEaebw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>729259766533</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.abc.Lifelog</string>
+	<key>PROJECT_ID</key>
+	<string>lifelog-422d8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lifelog-422d8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:729259766533:ios:1d20e7d1d2b684533d3d6c</string>
+	<key>DATABASE_URL</key>
+	<string>https://lifelog-422d8.firebaseio.com</string>
+</dict>
+</plist>
