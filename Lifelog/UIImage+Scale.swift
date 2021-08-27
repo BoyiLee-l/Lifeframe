@@ -14,7 +14,6 @@ extension UIImage {
         if self.size.width == newWidth {
             return self
         }
-        
         // 計算縮放因子
         let scaleFactor = newWidth / self.size.width
         let newHeight = self.size.height * scaleFactor
