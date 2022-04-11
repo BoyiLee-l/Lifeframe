@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import ImagePicker
+import YPImagePicker
 import Firebase
 import Kingfisher
 
@@ -43,11 +43,30 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
 
     // MARK: - 相機
     @IBAction func openCamera(_ sender: Any) {
-        let imagePickerController = ImagePickerController()
-        imagePickerController.delegate = self
-        imagePickerController.imageLimit = 1
-        navigationController?.pushViewController(imagePickerController, animated: true)
-        //present(imagePickerController, animated: true, completion: nil)
+        var config = YPImagePickerConfiguration()
+        config.colors.tintColor = .black
+        config.wordings.next = "OK"
+        config.showsPhotoFilters = false
+        
+        let picker = YPImagePicker(configuration: config)
+        
+        picker.didFinishPicking { [unowned picker] items, _ in
+            
+            guard let photo = items.singlePhoto
+            else {
+                picker.dismiss(animated: true, completion: nil)
+                
+                return
+            }
+            
+            PostService.shared.uploadImage(image: photo.image) {
+                picker.dismiss(animated: true, completion: nil)
+                self.loadRecentPosts()
+            }
+            
+        }
+        
+        present(picker, animated: true, completion: nil)
     }
     
     // MARK: - 處理貼文下載與顯示
@@ -104,29 +123,29 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
     
 }
 // MARK: - ImagePicker 委派
-extension FeedTableViewController: ImagePickerDelegate {
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        
-    }
-    
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        // 取得第一張圖片
-        guard let image = images.first else {
-            dismiss(animated: true, completion: nil)
-            return
-        }
-        
-        // Upload image to the cloud
-        PostService.shared.uploadImage(image: image) {
-            self.dismiss(animated: true, completion: nil)
-            self.loadRecentPosts()
-        }
-        
-    }
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        dismiss(animated: true, completion: nil)
-    }
-}
+//extension FeedTableViewController: ImagePickerDelegate {
+//    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+//        
+//    }
+//    
+//    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+//        // 取得第一張圖片
+//        guard let image = images.first else {
+//            dismiss(animated: true, completion: nil)
+//            return
+//        }
+//        
+//        // Upload image to the cloud
+//        PostService.shared.uploadImage(image: image) {
+//            self.dismiss(animated: true, completion: nil)
+//            self.loadRecentPosts()
+//        }
+//        
+//    }
+//    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+//        dismiss(animated: true, completion: nil)
+//    }
+//}
 
 extension FeedTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

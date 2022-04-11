@@ -24,7 +24,6 @@
 
 #import "FBSDKAppLink.h"
 #import "FBSDKAppLinkTarget.h"
-#import "FBSDKInternalUtility.h"
 
 static const CGFloat FBSDKMarginX = 8.5f;
 static const CGFloat FBSDKMarginY = 8.5f;
@@ -161,7 +160,7 @@ static const CGFloat FBSDKCloseButtonHeight = 12.0;
             break;
     }
     if (include && !application.statusBarHidden) {
-        BOOL landscape = UIInterfaceOrientationIsLandscape(FBSDKInternalUtility.statusBarOrientation);
+        BOOL landscape = UIInterfaceOrientationIsLandscape(application.statusBarOrientation);
         CGRect statusBarFrame = application.statusBarFrame;
         return landscape ? CGRectGetWidth(statusBarFrame) : CGRectGetHeight(statusBarFrame);
     }

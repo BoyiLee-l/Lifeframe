@@ -11,6 +11,7 @@ import Firebase
 import GoogleSignIn
 import Kingfisher
 import FBSDKLoginKit
+
 class ProfileViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
@@ -47,7 +48,7 @@ class ProfileViewController: UIViewController {
                 let userInfo = providerData[0]
                 switch userInfo.providerID {
                 case "google.com":
-                    GIDSignIn.sharedInstance().signOut()
+                    GIDSignIn.sharedInstance.signOut()
                 default:
                     break
                 }

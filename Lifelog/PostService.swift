@@ -22,7 +22,7 @@ final class PostService {
     
     let BASE_DB_REF: DatabaseReference = Database.database().reference()
     
-    var POST_DB_REF: DatabaseReference = Database.database().reference().child("user").child(uid ?? "")
+    let POST_DB_REF: DatabaseReference = Database.database().reference().child("posts")
     // MARK: - Firebase Storage Reference
     
     let PHOTO_STORAGE_REF: StorageReference = Storage.storage().reference().child("photo")
@@ -46,27 +46,33 @@ final class PostService {
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpg"
         // Prepare the upload task
-        let uploadTask = imageStorageRef.putData(imageData, metadata: metadata)
-        // Observe the upload status
-        uploadTask.observe(.success) { (snapshot) in
-            guard let displayName = Auth.auth().currentUser?.displayName else {
+        let uploadTask = imageStorageRef.putData(imageData, metadata: metadata) { metadata, error in
+            
+            if error != nil {
+                print(error.debugDescription)
                 return
             }
-            // Add a reference in the database
-            snapshot.reference.downloadURL(completion: { (url, error) in
+            
+            imageStorageRef.downloadURL { (url, error) in
+                
+                guard let displayName = Auth.auth().currentUser?.displayName else {
+                    return
+                }
+                
                 guard let url = url else {
                     return
                 }
+                
                 // Add a reference in the database
                 let imageFileURL = url.absoluteString
-                let photoURL = Auth.auth().currentUser?.photoURL?.absoluteString
                 let timestamp = Int(Date().timeIntervalSince1970 * 1000)
+                    
                 let post: [String : Any] = ["imageFileURL" : imageFileURL,
-                                            "userPhoto" : photoURL ?? "error",
-                                            "votes" : like,
+                                            "votes" : Int(0),
                                             "user" : displayName,
                                             "timestamp" : timestamp
-                ]
+                                            ]
+                    
                 //// 我只改這裡
                 guard let email = Auth.auth().currentUser?.uid else {return}
                 let ref = Database.database().reference().child("user")
@@ -74,9 +80,11 @@ final class PostService {
                 ref.child(email).childByAutoId().setValue(post)
                 //postDatabaseRef.setValue(post)
                 
-            })
+            }
+            
             completionHandler()
         }
+        
         uploadTask.observe(.progress) { (snapshot) in
             
             let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
@@ -89,6 +97,8 @@ final class PostService {
             }
         }
     }
+    
+
     
   
     

@@ -3,9 +3,7 @@
 //  Lifelog
 //
 //  Created by user on 2020/5/19.
-//  Copyright © 2020 AppCoda. All rights reserved.
-//
-
+//  
 import UIKit
 import Foundation
 

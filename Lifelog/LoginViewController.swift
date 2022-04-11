@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+
 class LoginViewController: UIViewController {
     
     @IBOutlet var emailTextField: UITextField!
@@ -69,6 +70,7 @@ class LoginViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
+            
             // 解除鍵盤
             self.view.endEditing(true)
             // 呈現主視圖

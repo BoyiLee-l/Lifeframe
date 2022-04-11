@@ -6,26 +6,17 @@ target 'Lifelog' do
   use_frameworks!
 
   # Pods for Lifelog
+ pod 'YPImagePicker'
  pod 'Firebase/Core'
  pod 'Firebase/Auth'
  pod 'Firebase/Database' 
  pod 'Firebase/Storage'
 
- # Pods for Facebook
- pod 'FBSDKLoginKit'
+ pod 'FacebookCore'
+ pod 'FacebookLogin'
+ pod 'FacebookShare'
 
- # Pods for Google Sign In
  pod 'GoogleSignIn'
-
- # Pods for ImagePicker
- pod 'ImagePicker'
  pod 'Kingfisher'
 
- pod 'Alamofire'
- pod 'SwiftyJSON', '~> 4.0'
- pod 'SVProgressHUD'
- pod 'SCLAlertView'
- pod 'MarqueeLabel'
- pod 'NVActivityIndicatorView'
- pod 'SnapKit', '~> 5.0.0'
 end
