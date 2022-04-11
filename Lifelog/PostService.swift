@@ -22,7 +22,7 @@ final class PostService {
     
     let BASE_DB_REF: DatabaseReference = Database.database().reference()
     
-    let POST_DB_REF: DatabaseReference = Database.database().reference().child("posts")
+    let POST_DB_REF: DatabaseReference = Database.database().reference().child("user")
     // MARK: - Firebase Storage Reference
     
     let PHOTO_STORAGE_REF: StorageReference = Storage.storage().reference().child("photo")
@@ -65,10 +65,11 @@ final class PostService {
                 
                 // Add a reference in the database
                 let imageFileURL = url.absoluteString
+                let photoURL = Auth.auth().currentUser?.photoURL?.absoluteString
                 let timestamp = Int(Date().timeIntervalSince1970 * 1000)
-                    
                 let post: [String : Any] = ["imageFileURL" : imageFileURL,
-                                            "votes" : Int(0),
+                                            "userPhoto" : photoURL ?? "error",
+                                            "votes" : like,
                                             "user" : displayName,
                                             "timestamp" : timestamp
                                             ]
@@ -78,7 +79,7 @@ final class PostService {
                 let ref = Database.database().reference().child("user")
                 
                 ref.child(email).childByAutoId().setValue(post)
-                //postDatabaseRef.setValue(post)
+//                postDatabaseRef.child(email).setValue(post)
                 
             }
             
@@ -88,7 +89,7 @@ final class PostService {
         uploadTask.observe(.progress) { (snapshot) in
             
             let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
-            print("Uploading... \(percentComplete)% complete")
+            print("Uploading \(imageKey).jpg... \(percentComplete)% complete")
         }
         
         uploadTask.observe(.failure) { (snapshot) in

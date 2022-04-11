@@ -9,19 +9,20 @@
 import UIKit
 import YPImagePicker
 import Firebase
-import Kingfisher
+import FirebaseStorage
+
 
 var photoCount : Int?
 protocol FeedTableViewCellDelegate {
-    func  receiveData(data: UIActivityViewController)
+    func receiveData(data: UIActivityViewController)
     func FeedTableViewCellDid(_ sender:PostCell)
 }
+
 class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
-   
-    
     var postfeed: [Post] = []
     var thedata = UIActivityViewController(activityItems: [], applicationActivities: nil)
     fileprivate var isLoadingPost = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //設置下拉式更新
@@ -32,7 +33,10 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
         // 載入最新的貼文
         //// 我只改這裡
         let ref = Database.database().reference().child("user")
-        guard let emailid = Auth.auth().currentUser?.uid else {return}
+        guard let emailid = Auth.auth().currentUser?.uid else {
+            
+            return
+        }
         ref.child(emailid).observe(DataEventType.childAdded) { (datasnap) in
             print("帳號ＩＤ   \(emailid) == \(datasnap)")
         }
@@ -71,16 +75,20 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
     
     // MARK: - 處理貼文下載與顯示
     @objc fileprivate func loadRecentPosts() {
+        
         isLoadingPost = true
+        
         PostService.shared.getRecentPosts(start: postfeed.first?.timestamp, limit: 10) { (newPosts) in
             if newPosts.count > 0 {
                 // 加上這個陣列至貼文陣列的開始處
                 self.postfeed.insert(contentsOf: newPosts, at: 0)
             }
+            
             self.isLoadingPost = false
+            
             if let _ = self.refreshControl?.isRefreshing {
                 // 為了讓動畫效果更佳，在結束更新之前延遲 0.5秒
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.1, execute: {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                     self.refreshControl?.endRefreshing()
                     self.displayNewPosts(newPosts: newPosts)
                     photoCount = self.postfeed.count
@@ -113,7 +121,6 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
     
     func FeedTableViewCellDid(_ sender: PostCell) {
         guard let indexPath = tableView.indexPath(for: sender) else {return}
-        
         present(thedata , animated: true)
         print(indexPath)
        }

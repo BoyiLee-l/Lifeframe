@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c4X-vN-RJm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c4X-vN-RJm">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb4-MV-Vfz" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb4-MV-Vfz" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                 <rect key="frame" x="16" y="597" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" priority="750" constant="343" id="hd3-sy-frm"/>
@@ -56,7 +57,7 @@
                                     <segue destination="Ahu-et-QBf" kind="presentation" id="dZC-Vm-azo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOx-bQ-brQ" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOx-bQ-brQ" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                 <rect key="frame" x="16" y="346" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ks2-Hr-1UH"/>
@@ -87,7 +88,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="p2o-0x-MSt">
                                 <rect key="frame" x="16" y="426" width="343" height="107"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r12-MH-aLP" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r12-MH-aLP" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -110,7 +111,7 @@
                                             <action selector="facebookLoginWithSender:" destination="c4X-vN-RJm" eventType="touchUpInside" id="CvF-Z9-Yko"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwt-vQ-6nY" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cwt-vQ-6nY" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="57" width="343" height="50"/>
                                         <color key="backgroundColor" red="0.82745098039215681" green="0.28235294117647058" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -145,6 +146,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ywr-Q1-zX4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ywr-Q1-zX4" firstAttribute="trailing" secondItem="bM2-Ds-VPm" secondAttribute="trailing" id="3K9-e9-zVl"/>
@@ -168,7 +170,6 @@
                             <constraint firstItem="j7Q-7q-pqd" firstAttribute="leading" secondItem="ywr-Q1-zX4" secondAttribute="leading" constant="25" id="qaM-ya-3IL"/>
                             <constraint firstItem="ywr-Q1-zX4" firstAttribute="bottom" secondItem="hb4-MV-Vfz" secondAttribute="bottom" constant="20" id="yJv-B9-xSY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ywr-Q1-zX4"/>
                     </view>
                     <navigationItem key="navigationItem" id="KKo-Dy-6P4"/>
                 </viewController>
@@ -206,7 +207,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-3u-9ho">
                                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="25.5"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swH-IN-Vnr">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swH-IN-Vnr">
                                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="25.5"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <state key="normal" image="email"/>
@@ -243,7 +244,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="KSs-oe-Bck">
                                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="27"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-71-v4f">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Hs-71-v4f">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="27"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         <state key="normal" image="lock"/>
@@ -276,7 +277,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkr-NB-A7f" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkr-NB-A7f" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="124.5" width="323" height="50"/>
                                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -298,7 +299,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd8-CP-HGQ">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd8-CP-HGQ">
                                         <rect key="frame" x="0.0" y="204.5" width="323" height="34.5"/>
                                         <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="16"/>
                                         <state key="normal" title="FORGOT PASSWORD?">
@@ -314,6 +315,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="whC-CW-bKJ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="L7f-O2-277" secondAttribute="bottom" id="12R-o3-qIv"/>
@@ -328,7 +330,6 @@
                             <constraint firstItem="L7f-O2-277" firstAttribute="top" secondItem="FuI-aJ-dJk" secondAttribute="top" id="e2X-KB-1ex"/>
                             <constraint firstItem="2Hp-K5-WEM" firstAttribute="leading" secondItem="FuI-aJ-dJk" secondAttribute="leadingMargin" constant="10" id="i3b-Sv-29P"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="whC-CW-bKJ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="Uba-Cz-hva">
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="iDU-Gi-dfH">
@@ -375,7 +376,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IAQ-N3-c7k">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="25.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvo-13-Bs8">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvo-13-Bs8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="25.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" image="nametag"/>
@@ -412,7 +413,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wOf-sY-rA4">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="25.5"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXJ-Pc-cYA">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXJ-Pc-cYA">
                                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="25.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" image="email"/>
@@ -449,7 +450,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="ZIl-4e-3YD">
                                                         <rect key="frame" x="0.0" y="0.0" width="323" height="24"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0w-P9-Ip5">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0w-P9-Ip5">
                                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="24"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <state key="normal" image="lock"/>
@@ -485,9 +486,9 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ao3-F6-1Bb" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ao3-F6-1Bb" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="178" width="323" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="LAZ-T4-k9n"/>
                                         </constraints>
@@ -511,6 +512,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="NEo-xY-L39"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NEo-xY-L39" firstAttribute="trailing" secondItem="0KW-63-5db" secondAttribute="trailing" id="Afo-lc-lTP"/>
@@ -525,7 +527,6 @@
                             <constraint firstItem="NEo-xY-L39" firstAttribute="trailing" secondItem="nJr-cd-cS6" secondAttribute="trailing" id="n4f-LQ-oeQ"/>
                             <constraint firstItem="nJr-cd-cS6" firstAttribute="leading" secondItem="NEo-xY-L39" secondAttribute="leading" id="zCD-2u-eJa"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="NEo-xY-L39"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="CDU-Zx-PjT">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="b6T-4q-2FS">
@@ -570,7 +571,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8CV-IK-PPE">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="24"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGP-B2-YhT">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGP-B2-YhT">
                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <state key="normal" image="email"/>
@@ -601,9 +602,9 @@
                                             <constraint firstAttribute="trailing" secondItem="OJc-eE-B6u" secondAttribute="trailing" id="Lqn-UR-Ddh"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-iJ-lfZ" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-iJ-lfZ" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="95" width="323" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="y2F-ig-Tem"/>
                                         </constraints>
@@ -627,6 +628,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="tTa-TG-bSc"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tTa-TG-bSc" firstAttribute="trailing" secondItem="KhK-Le-Hlt" secondAttribute="trailing" id="9tj-0D-F9O"/>
@@ -641,7 +643,6 @@
                             <constraint firstItem="NUr-vC-wJT" firstAttribute="leading" secondItem="tTa-TG-bSc" secondAttribute="leading" id="eGJ-Fg-69a"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2XC-IN-agQ" secondAttribute="trailing" constant="10" id="xhB-Gc-hoh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="tTa-TG-bSc"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="HzL-Un-hEA" id="Qj0-pH-RLG"/>
@@ -731,9 +732,9 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQg-tF-hlF" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQg-tF-hlF" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                 <rect key="frame" x="26" y="574" width="323" height="50"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="e62-nc-CjX"/>
                                 </constraints>
@@ -752,6 +753,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="E1D-9D-sgO"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XQg-tF-hlF" secondAttribute="trailing" constant="10" id="0gq-hK-I0s"/>
@@ -769,7 +771,6 @@
                             <constraint firstItem="Z9i-G0-Dwu" firstAttribute="leading" secondItem="LlU-3Y-yc8" secondAttribute="leadingMargin" constant="51" id="wlY-6g-z8X"/>
                             <constraint firstItem="XQg-tF-hlF" firstAttribute="leading" secondItem="LlU-3Y-yc8" secondAttribute="leadingMargin" constant="10" id="yRA-Vj-A62"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="E1D-9D-sgO"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="oDE-Aq-DAq">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="qBh-JI-llc">
@@ -818,7 +819,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="432" id="IHH-ei-Cv4" customClass="PostCell" customModule="Lifeframe" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="432"/>
+                                <rect key="frame" x="0.0" y="44.5" width="375" height="432"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IHH-ei-Cv4" id="htE-0B-LmK">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="432"/>
@@ -884,7 +885,7 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-dr-kCo" userLabel="Download" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-dr-kCo" userLabel="Download" customClass="LineButton" customModule="Lifeframe" customModuleProvider="target">
                                                     <rect key="frame" x="313" y="0.0" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="dL0-vw-gVD"/>
@@ -974,6 +975,38 @@
             <point key="canvasLocation" x="3509.5999999999999" y="1617.8410794602701"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Ao3-F6-1Bb">
+            <size key="intrinsicContentSize" width="68" height="33"/>
+        </designable>
+        <designable name="Cwt-vQ-6nY">
+            <size key="intrinsicContentSize" width="200" height="21"/>
+        </designable>
+        <designable name="EOx-bQ-brQ">
+            <size key="intrinsicContentSize" width="186" height="21"/>
+        </designable>
+        <designable name="FhU-dr-kCo">
+            <size key="intrinsicContentSize" width="23" height="23"/>
+        </designable>
+        <designable name="Tmp-iJ-lfZ">
+            <size key="intrinsicContentSize" width="179" height="33"/>
+        </designable>
+        <designable name="XQg-tF-hlF">
+            <size key="intrinsicContentSize" width="68" height="33"/>
+        </designable>
+        <designable name="hb4-MV-Vfz">
+            <size key="intrinsicContentSize" width="150" height="33"/>
+        </designable>
+        <designable name="lPZ-VJ-mkY">
+            <size key="intrinsicContentSize" width="32" height="18"/>
+        </designable>
+        <designable name="r12-MH-aLP">
+            <size key="intrinsicContentSize" width="221.5" height="21"/>
+        </designable>
+        <designable name="tkr-NB-A7f">
+            <size key="intrinsicContentSize" width="55" height="33"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Camera" width="25" height="25"/>
         <image name="Download" width="23" height="23"/>
@@ -987,5 +1020,8 @@
         <image name="lock" width="20" height="27"/>
         <image name="nametag" width="24" height="20"/>
         <image name="simon-profile" width="128" height="128"/>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
