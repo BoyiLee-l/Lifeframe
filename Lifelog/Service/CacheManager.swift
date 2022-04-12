@@ -2,9 +2,8 @@
 //  CacheManager.swift
 //  FirebaseDemo
 //
-//  Created by Simon Ng on 30/1/2020.
-//  Copyright © 2020 AppCoda. All rights reserved.
-//
+//  Created by user on 2020/5/19.
+
 
 import Foundation
 

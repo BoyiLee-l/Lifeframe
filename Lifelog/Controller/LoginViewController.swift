@@ -2,9 +2,8 @@
 //  LogonViewController.swift
 //  FirebaseDemo
 //
-//  Created by Simon Ng on 14/12/2016.
-//  Copyright © 2016 AppCoda. All rights reserved.
-//
+//  Created by user on 2020/5/19.
+
 
 import UIKit
 import Firebase

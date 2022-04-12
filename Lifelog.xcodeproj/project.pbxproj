@@ -97,40 +97,82 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CE4F82352473DF1700D03120 /* Util */ = {
+		CE16A95028050E8800D88B67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CE4F824A2474D94B00D03120 /* UIImage+Scale.swift */,
+				F4E9C90C1E013DF800FD9D7C /* LoginViewController.swift */,
+				F4D2C3531E1E54C300BD0580 /* SignUpViewController.swift */,
+				F4D2C3551E1E59AE00BD0580 /* WelcomeViewController.swift */,
+				F4D2C3571E1E851300BD0580 /* ResetPasswordViewController.swift */,
+				F4B9D7651E1FA62600F7CAD8 /* ProfileViewController.swift */,
+				CE5617BD2473D54200CBEF2D /* FeedTableViewController.swift */,
 			);
-			name = Util;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		CE4F824F2475036000D03120 /* Model */ = {
+		CE16A95128050EC300D88B67 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CE16A95428050F2F00D88B67 /* Fonts */,
+				F4E9C9061E013DBC00FD9D7C /* Info.plist */,
+				CE5617BB24738E5900CBEF2D /* GoogleService-Info.plist */,
+				F4E9C9011E013DBC00FD9D7C /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CE16A95428050F2F00D88B67 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F4E9C9141E0153E000FD9D7C /* Rubik-Black.ttf */,
+				F4E9C9151E0153E000FD9D7C /* Rubik-BlackItalic.ttf */,
+				F4E9C9161E0153E000FD9D7C /* Rubik-Bold.ttf */,
+				F4E9C9171E0153E000FD9D7C /* Rubik-BoldItalic.ttf */,
+				F4E9C9181E0153E000FD9D7C /* Rubik-Italic.ttf */,
+				F4E9C9191E0153E000FD9D7C /* Rubik-Light.ttf */,
+				F4E9C91A1E0153E000FD9D7C /* Rubik-LightItalic.ttf */,
+				F4E9C91B1E0153E000FD9D7C /* Rubik-Medium.ttf */,
+				F4E9C91C1E0153E000FD9D7C /* Rubik-MediumItalic.ttf */,
+				F4E9C91D1E0153E000FD9D7C /* Rubik-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE16A95528050F6C00D88B67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CE4F82502475038900D03120 /* Post.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		CE4F8252247503B000D03120 /* Service */ = {
+		CE16A95928050FA700D88B67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE16A95A28050FD900D88B67 /* Cell */,
+				F4E9C9101E013E4E00FD9D7C /* LineButton.swift */,
+				F4D2C34F1E1E169F00BD0580 /* UITextField+Placeholder.swift */,
+				F4D2C3511E1E4B8E00BD0580 /* UINavigationController+Transparent.swift */,
+				CE4F824A2474D94B00D03120 /* UIImage+Scale.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE16A95A28050FD900D88B67 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CE5617C12473D6AB00CBEF2D /* PostCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		CE16A95B28050FEB00D88B67 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				CE4F8253247503CF00D03120 /* PostService.swift */,
 				CE4F8255247504AE00D03120 /* CacheManager.swift */,
 			);
-			name = Service;
-			sourceTree = "<group>";
-		};
-		CEE3B5D52803FDE6003837A7 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				F4E9C8FA1E013DBC00FD9D7C /* AppDelegate.swift */,
-				F4E9C9061E013DBC00FD9D7C /* Info.plist */,
-				CE5617BB24738E5900CBEF2D /* GoogleService-Info.plist */,
-				F4E9C9011E013DBC00FD9D7C /* Assets.xcassets */,
-			);
-			name = SupportingFiles;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		DEE78B70690A3503EA3C53DF /* Frameworks */ = {
@@ -162,66 +204,16 @@
 		F4E9C8F91E013DBC00FD9D7C /* Lifelog */ = {
 			isa = PBXGroup;
 			children = (
+				CE16A95B28050FEB00D88B67 /* Service */,
+				CE16A95128050EC300D88B67 /* SupportingFiles */,
+				CE16A95528050F6C00D88B67 /* Model */,
+				CE16A95928050FA700D88B67 /* View */,
+				CE16A95028050E8800D88B67 /* Controller */,
 				F4E9C8FE1E013DBC00FD9D7C /* Main.storyboard */,
+				F4E9C8FA1E013DBC00FD9D7C /* AppDelegate.swift */,
 				F4E9C9031E013DBC00FD9D7C /* LaunchScreen.storyboard */,
-				CEE3B5D52803FDE6003837A7 /* SupportingFiles */,
-				CE4F8252247503B000D03120 /* Service */,
-				CE4F824F2475036000D03120 /* Model */,
-				CE4F82352473DF1700D03120 /* Util */,
-				F4E9C9121E0153BD00FD9D7C /* Resources */,
-				F4E9C90F1E013E2200FD9D7C /* Controller */,
-				F4E9C90E1E013E0C00FD9D7C /* View */,
 			);
 			path = Lifelog;
-			sourceTree = "<group>";
-		};
-		F4E9C90E1E013E0C00FD9D7C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F4E9C9101E013E4E00FD9D7C /* LineButton.swift */,
-				F4D2C34F1E1E169F00BD0580 /* UITextField+Placeholder.swift */,
-				F4D2C3511E1E4B8E00BD0580 /* UINavigationController+Transparent.swift */,
-				CE5617C12473D6AB00CBEF2D /* PostCell.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		F4E9C90F1E013E2200FD9D7C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F4E9C90C1E013DF800FD9D7C /* LoginViewController.swift */,
-				F4D2C3531E1E54C300BD0580 /* SignUpViewController.swift */,
-				F4D2C3551E1E59AE00BD0580 /* WelcomeViewController.swift */,
-				F4D2C3571E1E851300BD0580 /* ResetPasswordViewController.swift */,
-				F4B9D7651E1FA62600F7CAD8 /* ProfileViewController.swift */,
-				CE5617BD2473D54200CBEF2D /* FeedTableViewController.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		F4E9C9121E0153BD00FD9D7C /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				F4E9C9131E0153C700FD9D7C /* Fonts */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		F4E9C9131E0153C700FD9D7C /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				F4E9C9141E0153E000FD9D7C /* Rubik-Black.ttf */,
-				F4E9C9151E0153E000FD9D7C /* Rubik-BlackItalic.ttf */,
-				F4E9C9161E0153E000FD9D7C /* Rubik-Bold.ttf */,
-				F4E9C9171E0153E000FD9D7C /* Rubik-BoldItalic.ttf */,
-				F4E9C9181E0153E000FD9D7C /* Rubik-Italic.ttf */,
-				F4E9C9191E0153E000FD9D7C /* Rubik-Light.ttf */,
-				F4E9C91A1E0153E000FD9D7C /* Rubik-LightItalic.ttf */,
-				F4E9C91B1E0153E000FD9D7C /* Rubik-Medium.ttf */,
-				F4E9C91C1E0153E000FD9D7C /* Rubik-MediumItalic.ttf */,
-				F4E9C91D1E0153E000FD9D7C /* Rubik-Regular.ttf */,
-			);
-			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

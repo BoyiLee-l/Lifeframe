@@ -2,9 +2,8 @@
 //  ResetPasswordViewController.swift
 //  FirebaseDemo
 //
-//  Created by Simon Ng on 5/1/2017.
-//  Copyright © 2017 AppCoda. All rights reserved.
-//
+//  Created by user on 2020/5/19.
+
 
 import UIKit
 import Firebase
