@@ -18,6 +18,7 @@ protocol FeedTableViewCellDelegate {
 }
 
 class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
+    
     var postfeed: [Post] = []
     var thedata = UIActivityViewController(activityItems: [], applicationActivities: nil)
     fileprivate var isLoadingPost = false
@@ -30,20 +31,18 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
         refreshControl?.tintColor = UIColor.white
         refreshControl?.addTarget(self, action: #selector(loadRecentPosts), for: UIControl.Event.valueChanged)
         // 載入最新的貼文
-        //// 我只改這裡
         let ref = Database.database().reference().child("user")
         guard let emailid = Auth.auth().currentUser?.uid else {
-            
             return
         }
+        
         ref.child(emailid).observe(DataEventType.childAdded) { (datasnap) in
             print("帳號ＩＤ   \(emailid) == \(datasnap)")
         }
-        postfeed = []
         loadRecentPosts()
-        tableView.reloadData()
+        //        tableView.reloadData()
     }
-
+    
     // MARK: - 相機
     @IBAction func openCamera(_ sender: Any) {
         var config = YPImagePickerConfiguration()
@@ -68,13 +67,11 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
             }
             
         }
-        
         present(picker, animated: true, completion: nil)
     }
     
     // MARK: - 處理貼文下載與顯示
     @objc fileprivate func loadRecentPosts() {
-        
         isLoadingPost = true
         
         PostService.shared.getRecentPosts(start: postfeed.first?.timestamp, limit: 10) { (newPosts) in
@@ -116,42 +113,15 @@ class FeedTableViewController: UITableViewController,FeedTableViewCellDelegate{
     
     func receiveData(data: UIActivityViewController) {
         self.thedata = data
-       }
+    }
     
     func FeedTableViewCellDid(_ sender: PostCell) {
         guard let indexPath = tableView.indexPath(for: sender) else {return}
         present(thedata , animated: true)
         print(indexPath)
-       }
-       
-    
-    
+    }
     
 }
-// MARK: - ImagePicker 委派
-//extension FeedTableViewController: ImagePickerDelegate {
-//    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-//        
-//    }
-//    
-//    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-//        // 取得第一張圖片
-//        guard let image = images.first else {
-//            dismiss(animated: true, completion: nil)
-//            return
-//        }
-//        
-//        // Upload image to the cloud
-//        PostService.shared.uploadImage(image: image) {
-//            self.dismiss(animated: true, completion: nil)
-//            self.loadRecentPosts()
-//        }
-//        
-//    }
-//    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
 
 extension FeedTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -166,10 +136,10 @@ extension FeedTableViewController {
         return postfeed.count
         
     }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         // We want to trigger the loading when the user reaches the last two rows

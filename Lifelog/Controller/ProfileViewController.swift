@@ -16,25 +16,31 @@ class ProfileViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet weak var myPhoto: UIImageView!
     @IBOutlet weak var countLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureUI()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func configureUI() {
         self.title = "My Profile"
+        myPhoto.clipsToBounds = true
+        myPhoto.layer.cornerRadius = (myPhoto.frame.width) / 2
         
         if let currentUser = Auth.auth().currentUser {
             nameLabel.text = currentUser.displayName
             if let urls = currentUser.photoURL{
                 myPhoto.kf.setImage(with: urls)
             }else{
-                myPhoto.image = UIImage(named: "user1")
+                myPhoto.image = UIImage(named: "icon_nopic")
             }
             countLabel.text = "\(photoCount ?? 0) photos"
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func close(sender: AnyObject) {

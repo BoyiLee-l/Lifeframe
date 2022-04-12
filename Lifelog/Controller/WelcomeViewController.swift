@@ -27,6 +27,7 @@ class WelcomeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    //MARK: google登入
     @IBAction func googleLogin(sender: UIButton) {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
             return
@@ -38,7 +39,6 @@ class WelcomeViewController: UIViewController {
         guard let rootViewController = windowScene.windows.first?.rootViewController else { return }
         
         GIDSignIn.sharedInstance.signIn(with: configuration, presenting: rootViewController) { [unowned self] user, error in
-            
             if let error = error {
                 print("Login error: \(error.localizedDescription)")
                 let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -47,18 +47,33 @@ class WelcomeViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 
                 return
-                
             } else {
-                // Present the main view
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                    UIApplication.shared.keyWindow?.rootViewController = viewController
-                    self.dismiss(animated: true, completion: nil)
+                guard let authentication = user?.authentication, let idToken = authentication.idToken else {
+                    return
+                }
+                let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
+                
+                Auth.auth().signIn(with: credential){ (result, error) in
+                    if let error = error{
+                        print("Login error: \(error.localizedDescription)")
+                        let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
+                        let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                        alertController.addAction(okayAction)
+                        self.present(alertController, animated: true, completion: nil)
+                        return
+                    }
+                    
+                    // 呈現主視圖
+                    if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView"){
+                        UIApplication.shared.keyWindow?.rootViewController = viewController
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 }
             }
-            
         }
     }
     
+    //MARK: 臉書登入
     @IBAction func facebookLogin(sender: UIButton) {
         let fbLoginManager = LoginManager()
         fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (
@@ -83,7 +98,6 @@ class WelcomeViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                     return
                 }
-                
                 // 呈現主視圖
                 if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController
@@ -93,40 +107,3 @@ class WelcomeViewController: UIViewController {
         }
     }
 }
-
-//extension WelcomeViewController: GIDSignInDelegate {
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        if error != nil {
-//            return
-//        }
-//        
-//        guard let authentication = user.authentication else {
-//            return
-//        }
-//        
-//        
-//        let credential = GoogleAuthProvider.credential(withIDToken: authentication .idToken, accessToken: authentication.accessToken)
-//        
-//        Auth.auth().signIn(with: credential){ (result, error) in
-//            if let error = error{
-//                print("Login error: \(error.localizedDescription)")
-//                let alertController = UIAlertController(title: "Login Error", message: error.localizedDescription, preferredStyle: .alert)
-//                let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//                alertController.addAction(okayAction)
-//                self.present(alertController, animated: true, completion: nil)
-//                return
-//            }
-//            
-//            // 呈現主視圖
-//            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView"){
-//                UIApplication.shared.keyWindow?.rootViewController = viewController
-//                self.dismiss(animated: true, completion: nil)
-//                
-//            }
-//        }
-//    }
-//    
-//    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-//    }
-//    
-//}

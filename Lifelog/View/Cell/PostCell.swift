@@ -8,6 +8,7 @@ import UIKit
 import Foundation
 
 var like = 0
+
 class PostCell: UITableViewCell {
     private var currentPost: Post?
     var delegate: FeedTableViewCellDelegate?

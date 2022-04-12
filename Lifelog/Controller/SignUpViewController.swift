@@ -24,14 +24,14 @@ class SignUpViewController: UIViewController {
     @IBAction func registerAccount(_ sender: UIButton) {
         // 輸入驗證
         guard let name = nameTextField.text, name != "",
-            let emailAddress = emailTextField.text, emailAddress != "", let password = passwordTextField.text, password != "" else {
-                
-                let alertConteoller = UIAlertController(title: "Registration Error", message: "Please make sure you provide your name, email address and password to com plete the registration.", preferredStyle: .alert)
-                let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertConteoller.addAction(okayAction)
-                present(alertConteoller, animated: true, completion: nil)
-                return
-        }
+              let emailAddress = emailTextField.text, emailAddress != "", let password = passwordTextField.text, password != "" else {
+                  
+                  let alertConteoller = UIAlertController(title: "Registration Error", message: "Please make sure you provide your name, email address and password to com plete the registration.", preferredStyle: .alert)
+                  let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                  alertConteoller.addAction(okayAction)
+                  present(alertConteoller, animated: true, completion: nil)
+                  return
+              }
         // 在 Firebase 註冊使用者帳號
         Auth.auth().createUser(withEmail: emailAddress, password: password, completion : { (user, error) in
             if let error = error{

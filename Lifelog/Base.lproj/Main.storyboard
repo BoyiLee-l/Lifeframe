@@ -696,21 +696,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-and-gray-canon-dslr-camera-3804415" translatesAutoresizingMaskIntoConstraints="NO" id="5RI-Oy-Bd1" userLabel="Background Image View">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black-and-gray-canon-dslr-camera-3804415" translatesAutoresizingMaskIntoConstraints="NO" id="5RI-Oy-Bd1" userLabel="Background Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jEc-nU-ycv" userLabel="MaskView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Z9i-G0-Dwu">
-                                <rect key="frame" x="67" y="69" width="241" height="314.5"/>
+                                <rect key="frame" x="67" y="69" width="241" height="254.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="head" translatesAutoresizingMaskIntoConstraints="NO" id="QXY-cc-ma8">
-                                        <rect key="frame" x="0.5" y="0.0" width="240" height="240"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_nopic" translatesAutoresizingMaskIntoConstraints="NO" id="QXY-cc-ma8">
+                                        <rect key="frame" x="30.5" y="0.0" width="180" height="180"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="240" id="ZUt-lg-O6Y"/>
-                                            <constraint firstAttribute="width" constant="240" id="oej-Ww-4xn"/>
+                                            <constraint firstAttribute="height" constant="180" id="ZUt-lg-O6Y"/>
+                                            <constraint firstAttribute="width" constant="180" id="oej-Ww-4xn"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -719,13 +719,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bessie Lloyd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPl-jM-Qr1">
-                                        <rect key="frame" x="60.5" y="255" width="120" height="24"/>
+                                        <rect key="frame" x="60.5" y="195" width="120" height="24"/>
                                         <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="323 photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zx3-8e-RGX">
-                                        <rect key="frame" x="76" y="294" width="89.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 photos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zx3-8e-RGX">
+                                        <rect key="frame" x="85.5" y="234" width="70" height="20.5"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1017,6 +1017,7 @@
         <image name="green-plant-on-white-wooden-table-3644742" width="4000" height="6000"/>
         <image name="head" width="25" height="24"/>
         <image name="heart" width="22" height="18"/>
+        <image name="icon_nopic" width="166" height="165"/>
         <image name="lock" width="20" height="27"/>
         <image name="nametag" width="24" height="20"/>
         <image name="simon-profile" width="128" height="128"/>
