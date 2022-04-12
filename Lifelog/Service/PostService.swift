@@ -29,6 +29,7 @@ final class PostService {
     func uploadImage(image: UIImage, completionHandler: @escaping () -> Void) {
         // Generate a unique ID for the post and prepare the post database reference
         let postDatabaseRef = POST_DB_REF.childByAutoId()
+        
         // Use the unique key as the image name and prepare the storage reference
         guard let imageKey = postDatabaseRef.key else {
             return
